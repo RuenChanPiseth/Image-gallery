@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+img {
+  width: 300px;
+}
+li {
+  list-style: none;
+}
+li > img {
+  width: 100%;
+}
+.container {
+  columns: 150px 5;
+  padding: 0.5rem;
+}
+.wrapper {
+  position: relative;
+  /* background-color: lightblue; */
+}
+p.pharagraph:not(.display),
+i.fa-solid:not(.display) {
+  display: none;
+}
+.wrapper:hover .pharagraph {
+  display: block;
+  position: absolute;
+}
+.wrapper:hover i.fa-solid {
+  display: block;
+  position: absolute;
+}
+p.pharagraph {
+  bottom: 14px;
+  left: 45px;
+  color: white;
+}
+i.fa-solid:not(.display) {
+  background-color: white;
+  bottom: 10px;
+  padding: 0.3rem 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+i.fa-solid.fa-user {
+  left: 10px;
+  border-radius: 50%;
+}
+i.fa-solid.fa-download {
+  right: 10px;
+}
+.display-wrapper {
+  display: none;
+  left: 50%;
+  bottom: 50%;
+  position: fixed;
+  min-width: 50%;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  transform: translate(-50%, 50%);
+  padding: 3rem 1rem;
+  border-radius: 10px;
+  z-index: 99;
+  overflow: auto;
+  transition: all 0.5s;
+}
+.img-wrapper {
+  max-width: max-content;
+}
+.img-wrapper > img {
+  width: 100%;
+}
+i.display {
+  position: absolute;
+  top: 10px;
+  background-color: white;
+  padding: 0.3rem 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+i.display.fa-xmark {
+  right: 20px;
+  border-radius: 50%;
+  background-color: rgb(209, 14, 14);
+  color: white;
+}
+i.display.fa-download {
+  right: 55px;
+  background-color: orange;
+  color: white;
+}
+.show {
+  display: block;
+}
+.search-box-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(186, 186, 249);
+  /* margin: 1rem 1rem; */
+  z-index: 10;
+}
+.search-box {
+  margin-left: 20px;
+  position: relative;
+  display: flex;
+  width: 300px;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+}
+.search-box button {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: gray;
+  color: white;
+}
+.search-box button:hover {
+  background-color: rgb(148, 146, 146);
+}
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-left: 0.2rem;
+}
+button.see-more {
+  position: relative;
+  padding: 0.5rem 1rem;
+  left: 50%;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transform: translateX(-50%);
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background-color: rgb(21, 21, 135);
+  color: white;
+}
+button.refresh {
+  display: none;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  margin-right: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
+.show-refresh.refresh {
+  display: block;
+}
+button.refresh:hover {
+  background-color: lightgray;
+}
+
+@media screen and (max-width: 500px) {
+  .display-wrapper {
+    width: 100%;
+  }
+  .search-box-wrapper {
+    flex-wrap: wrap;
+    height: max-content;
+    padding: 0.5rem;
+  }
+  button.refresh {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+  }
+  .show-refresh {
+    display: block;
+  }
+}
